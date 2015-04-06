@@ -1,0 +1,5 @@
+This is a standalone web app which demonstrates how HTTP::BrowserDetect parses
+arbitrary UserAgent strings.  Clone this repository and:
+
+cpanm install Carton
+carton install && carton exec -- plackup app.pl
