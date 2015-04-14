@@ -24,39 +24,29 @@ __DATA__
   <tr>
     <td colspan="2" class="align-middle"><%= $parser->user_agent %></td>
   </tr>
-  <tr>
-    <td>Browser</td>
-    <td><%= $parser->browser_string %></td>
-  </tr>
-  <tr>
-    <td>Browser Version</td>
-    <td><%= $parser->browser_version %></td>
-  </tr>
 
-  <tr>
-    <td>Engine</td>
-    <td><%= $parser->engine_string %></td>
-  </tr>
-  <tr>
-    <td>Engine Version</td>
-    <td><%= $parser->engine_version %></td>
-  </tr>
 
-  <tr>
-    <td>OS</td>
-    <td><%= $parser->os_string %></td>
-  </tr>
-  <tr>
-    <td>OS Version</td>
-    <td><%= $parser->os_version %></td>
-  </tr>
+  % my @methods = (
+  %      'browser',    'browser_version', 'engine',  'engine_version', 'os_string',
+  %      'os_version', 'device_string',   'country', 'language',
+  % );
 
-  % for my $method ('mobile','tablet','device','robot') {
+  % for my $method (@methods){
+  %    if ( $parser->$method ) {
     <tr>
-      <td><%= ucfirst $method %></td>
+      <td><%= $method %></td>
+      <td><%= $parser->$method %></td>
+    </tr>
+  %    }
+  % }
+
+  % for my $method ('mobile','tablet','robot') {
+    <tr>
+      <td><%= $method %></td>
       <td><%= $parser->$method ? 'Yes' : 'No'  %></td>
     </tr>
   % }
+
 
 </table>
 
