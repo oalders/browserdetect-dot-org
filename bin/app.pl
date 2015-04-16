@@ -107,8 +107,8 @@ __DATA__
               <h3 class="masthead-brand">browser detect dot org</h3>
               <nav>
                 <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="https://github.com/oalders/browserdetect-dot-org">Fork on GitHub</a></li>
+                  <li><a href="https://github.com/oalders/http-browserdetect">Fork HTTP::BrowserDetect</a></li>
+                  <li><a href="https://github.com/oalders/browserdetect-dot-org">Fork this site</a></li>
                 </ul>
               </nav>
             </div>
@@ -121,7 +121,10 @@ __DATA__
 
           <div class="mastfoot">
             <div class="inner">
-              <p>Site by <a href="https://twitter.com/wundercounter">@wundercounter</a> | Cover template by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+              <p>
+                Powered by <a href="https://metacpan.org/pod/HTTP::BrowserDetect">HTTP::BrowserDetect</a> |
+                Site by <a href="https://twitter.com/wundercounter">@wundercounter</a> |
+                Cover template by <a href="https://twitter.com/mdo">@mdo</a>.</p>
             </div>
           </div>
 
