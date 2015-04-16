@@ -1,3 +1,5 @@
 cpanfile.snapshot
 local
+logs
 .tidyall.d/
+var

@@ -6,10 +6,22 @@ use HTTP::BrowserDetect;
 
 # Route with placeholder
 get '/' => sub {
-    my $c      = shift;
-    my $ua     = $c->req->param( 'ua' ) || $c->req->env->{HTTP_USER_AGENT};
-    my $parser = HTTP::BrowserDetect->new( $ua );
-    $c->stash( parser => $parser );
+    my $c       = shift;
+    my $ua      = $c->req->param('ua') || $c->req->env->{HTTP_USER_AGENT};
+    my $parser  = HTTP::BrowserDetect->new($ua);
+    my @methods = (
+        'browser_string',
+        'browser_version',
+        'engine',
+        'engine_version',
+        'os_string',
+        'os_version',
+        'device_string',
+        'country',
+        'language',
+    );
+
+    $c->stash( methods => \@methods, parser => $parser, );
     return $c->render;
 
 } => 'index';
@@ -25,13 +37,7 @@ __DATA__
     <td colspan="2" class="align-middle"><%= $parser->user_agent %></td>
   </tr>
 
-
-  % my @methods = (
-  %      'browser',    'browser_version', 'engine',  'engine_version', 'os_string',
-  %      'os_version', 'device_string',   'country', 'language',
-  % );
-
-  % for my $method (@methods){
+  % for my $method (@{$methods} ){
   %    if ( $parser->$method ) {
     <tr>
       <td><%= $method %></td>
