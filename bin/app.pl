@@ -108,7 +108,7 @@ __DATA__
               <nav>
                 <ul class="nav masthead-nav">
                   <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">Fork on GitHub</a></li>
+                  <li><a href="https://github.com/oalders/browserdetect-dot-org">Fork on GitHub</a></li>
                 </ul>
               </nav>
             </div>
