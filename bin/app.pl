@@ -21,7 +21,11 @@ get '/' => sub {
         'language',
     );
 
-    $c->stash( methods => \@methods, parser => $parser, );
+    $c->stash(
+        methods => \@methods,
+        parser  => $parser,
+        version => $HTTP::BrowserDetect::VERSION,
+    );
     return $c->render;
 
 } => 'index';
@@ -122,7 +126,7 @@ __DATA__
           <div class="mastfoot">
             <div class="inner">
               <p>
-                Powered by <a href="https://metacpan.org/pod/HTTP::BrowserDetect">HTTP::BrowserDetect</a> |
+                Powered by <a href="https://metacpan.org/release/OALDERS/HTTP-BrowserDetect-<%= $version %>">HTTP::BrowserDetect <%= $version %></a> |
                 Site by <a href="https://twitter.com/wundercounter">@wundercounter</a> |
                 Cover template by <a href="https://twitter.com/mdo">@mdo</a>.</p>
             </div>
