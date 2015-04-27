@@ -1,6 +1,7 @@
 #!/usr/bin/env perl
 
 use Mojolicious::Lite;
+use Mojo::Util qw(url_escape);
 
 use HTTP::BrowserDetect;
 
@@ -22,9 +23,10 @@ get '/' => sub {
     );
 
     $c->stash(
-        methods => \@methods,
-        parser  => $parser,
-        version => $HTTP::BrowserDetect::VERSION,
+        show_link => !$c->req->param('ua'),
+        methods   => \@methods,
+        parser    => $parser,
+        version   => $HTTP::BrowserDetect::VERSION,
     );
     return $c->render;
 
@@ -38,7 +40,7 @@ __DATA__
 
 <table class="table table-bordered text-left">
   <tr>
-    <td colspan="2" class="align-middle"><%= $parser->user_agent %></td>
+    <td colspan="2" class="align-middle"><%= $parser->user_agent %><% if ($show_link) { %> <a href="<%= url_for('/')->query(ua => $parser->user_agent) %>"><i class="glyphicon glyphicon-link"></i></a><% } %></td>
   </tr>
 
   % for my $method (@{$methods} ){
@@ -108,7 +110,7 @@ __DATA__
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand">browser detect dot org</h3>
+              <h3 class="masthead-brand"><a href="<%= url_for('/') %>">browser detect dot org</a></h3>
               <nav>
                 <ul class="nav masthead-nav">
                   <li><a href="https://github.com/oalders/http-browserdetect">Fork HTTP::BrowserDetect</a></li>
