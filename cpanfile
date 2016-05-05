@@ -1,4 +1,4 @@
-requires 'HTTP::BrowserDetect', '== 2.05';
+requires 'HTTP::BrowserDetect', '== 3.11';
 requires 'Mojolicious::Lite';
 requires 'Data::Printer';
 requires 'Plack';
