@@ -129,7 +129,7 @@ __DATA__
             <div class="inner">
               <p>
                 Powered by <a href="https://metacpan.org/release/OALDERS/HTTP-BrowserDetect-<%= $version %>">HTTP::BrowserDetect <%= $version %></a> |
-                Site by <a href="https://twitter.com/wundercounter">@wundercounter</a> |
+                Site by <a href="https://twitter.com/olafalders">@olafalders</a> |
                 Cover template by <a href="https://twitter.com/mdo">@mdo</a>.</p>
             </div>
           </div>
