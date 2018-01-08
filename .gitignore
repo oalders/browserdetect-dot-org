@@ -1,5 +1,13 @@
+ansible/site.retry
+ansible/tasks/roles
+bin/carton
+bin/carton-exec
+.carton
 cpanfile.snapshot
 local
 logs
+seed-cpanfile
 .tidyall.d/
+tidyall.ERR
+.vagrant
 var
