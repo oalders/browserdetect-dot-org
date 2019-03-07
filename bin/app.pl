@@ -13,13 +13,13 @@ get '/' => sub {
     my @methods = (
         'browser_string',
         'browser_version',
+        'country',
+        'device_string',
         'engine',
         'engine_version',
+        'language',
         'os_string',
         'os_version',
-        'device_string',
-        'country',
-        'language',
     );
 
     $c->stash(
@@ -52,7 +52,7 @@ __DATA__
   %    }
   % }
 
-  % for my $method ('mobile','tablet','robot') {
+  % for my $method ('mobile','tablet','robot','u2f') {
     <tr>
       <td><%= $method %></td>
       <td><%= $parser->$method ? 'Yes' : 'No'  %></td>
