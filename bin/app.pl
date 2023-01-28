@@ -1,14 +1,13 @@
 #!/usr/bin/env perl
 
 use Mojolicious::Lite;
-use Mojo::Util qw(url_escape);
 
-use HTTP::BrowserDetect;
+use HTTP::BrowserDetect ();
 
 # Route with placeholder
 get '/' => sub {
     my $c       = shift;
-    my $ua      = $c->req->param('ua') || $c->req->env->{HTTP_USER_AGENT};
+    my $ua      = $c->req->param('ua') || $c->req->headers->user_agent;
     my $parser  = HTTP::BrowserDetect->new($ua);
     my @methods = (
         'browser_string',
@@ -31,6 +30,9 @@ get '/' => sub {
     return $c->render;
 
 } => 'index';
+
+my $static = app->static;
+push @{$static->paths}, 'static';
 
 app->start;
 __DATA__
