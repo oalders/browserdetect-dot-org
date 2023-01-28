@@ -31,6 +31,9 @@ get '/' => sub {
 
 } => 'index';
 
+my $static = app->static;
+push @{$static->paths}, 'static';
+
 app->start;
 __DATA__
 
