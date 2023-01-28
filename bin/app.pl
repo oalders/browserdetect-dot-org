@@ -1,9 +1,8 @@
 #!/usr/bin/env perl
 
 use Mojolicious::Lite;
-use Mojo::Util qw(url_escape);
 
-use HTTP::BrowserDetect;
+use HTTP::BrowserDetect ();
 
 # Route with placeholder
 get '/' => sub {
