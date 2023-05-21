@@ -3,7 +3,6 @@ ansible/tasks/roles
 bin/carton
 bin/carton-exec
 .carton
-cpanfile.snapshot
 local
 logs
 seed-cpanfile
