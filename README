@@ -1,7 +1,11 @@
+# browserdetect.org
+
 This is a standalone web app which demonstrates how HTTP::BrowserDetect parses
 arbitrary UserAgent strings.  Clone this repository and:
 
+```text
 cpanm Carton
 carton install && carton exec -- plackup -Ilib
+```
 
-The live demonstration site is at http://browserdetect.org
+The deployed site is at https://browserdetect.org
