@@ -3,8 +3,8 @@ package BDO::App;
 use strict;
 use warnings;
 
-use Plack::Builder;
-use Plack::Middleware::Static;
+use Plack::Builder qw( builder enable mount );
+use Plack::Middleware::Static;    ## no perlimports
 
 sub to_app {
     my $app = builder {
