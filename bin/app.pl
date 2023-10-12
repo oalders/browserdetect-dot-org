@@ -129,7 +129,16 @@ __DATA__
               <p>
                 Powered by <a href="https://metacpan.org/release/OALDERS/HTTP-BrowserDetect-<%= $version %>">HTTP::BrowserDetect <%= $version %></a> |
                 Site by <a href="https://fosstodon.org/@oalders">@olafalders</a> |
-                Cover template by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+                Cover template by <a href="https://twitter.com/mdo">@mdo</a>.
+              </p>
+              <p>
+                <a href="https://prettygoodping.com">Monitor TLS Uptime</a> |
+                <a href="https://www.mymindisracing.com">Search for local triathlons, ultras and other races</a>
+              </p>
+              <p>
+                <a href="https://github.com/oalders/is">is: an inspector for your environment</a> |
+                <a href="https://www.olafalders.com">My blog</a>
+              <p>
             </div>
           </div>
 
