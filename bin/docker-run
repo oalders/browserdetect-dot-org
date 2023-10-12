@@ -1,0 +1,5 @@
+#!/usr/bin/env
+
+set -e -u -x -o pipefail
+
+sudo docker run -p 8001:8001 -d browserdetect-dot-org
