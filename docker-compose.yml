@@ -1,27 +1,11 @@
 ---
 version: "3.4"
 services:
-  # reverse_proxy:
-    # image: nginx:latest
-    # ports:
-      # - "80:80"
-      # - "443:443"
-    # restart: unless-stopped
-    # volumes:
-      # - ./nginx/conf:/etc/nginx/conf.d/:ro
   www:
     image: browserdetect-dot-org:latest
-    command: ["plackup", "-p", "8001", "-I", "/app/lib", "-I", ".", "--workers", "1", "--server", "Gazelle"]
-    # depends_on:
-      # - reverse_proxy
-    environment:
-      - PERL5OPT=-Iinc/wunder-framework/lib
-      - PLACK_ENV=deployment
-      - WF_PATH=/app
-      - WF_STREAM=live
     ports:
       - "8001:8001"
+    environment:
+      MOJO_MODE: production
     volumes:
       - .:/app
-    restart: always
-# volumes:
