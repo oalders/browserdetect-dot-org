@@ -72,7 +72,7 @@ __DATA__
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script data-goatcounter="https://wunder.goatcounter.com/count"
+    <script data-goatcounter="https://browserdetect.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
