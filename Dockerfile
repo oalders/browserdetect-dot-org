@@ -1,4 +1,4 @@
-FROM perl:5.36
+FROM perl:5.38
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
@@ -6,7 +6,7 @@ COPY . /app
 
 WORKDIR /app
 
-RUN cpanm --notest App::cpm && \ 
+RUN cpanm --notest App::cpm && \
     cpm install -g Carton::Snapshot && \
     cpm install -g ${CPM_ARGS} --cpanfile cpanfile
 #RUN rm -fr /root/.cpanm /root/.perl-cpm /tmp/*
