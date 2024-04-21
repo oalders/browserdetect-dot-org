@@ -1,5 +1,4 @@
 ---
-version: "3.4"
 services:
   www:
     image: browserdetect-dot-org:latest
